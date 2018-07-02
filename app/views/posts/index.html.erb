@@ -1,10 +1,11 @@
-<h1>Posts</h1>
+<h1>My Posts</h1>
+
+<%= link_to 'New post', new_post_path %>
+
 <% @posts.reverse_each do |post| %>
   <p>
     <strong>Post: <%= post.id %></strong><br>
-    <%= image_tag post.picture.url(:medium) %>
-  </p>
-  <p>
+    <%= image_tag post.picture.url(:medium) %><br>
     <%= post.caption %>
   </p>
 <% end %>
