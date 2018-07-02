@@ -1,0 +1,10 @@
+<h1>Posts</h1>
+<% @posts.reverse_each do |post| %>
+  <p>
+    <strong>Post: <%= post.id %></strong><br>
+    <%= image_tag post.picture.url(:medium) %>
+  </p>
+  <p>
+    <%= post.caption %>
+  </p>
+<% end %>
