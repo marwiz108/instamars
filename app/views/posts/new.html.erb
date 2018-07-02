@@ -1,16 +1,5 @@
 <h1>New Post</h1>
 
-<%= form_for @post, url: posts_path, html: { multipart: true } do |form| %>
-  <p>
-    <%= form.label :picture %>
-    <%= form.file_field :picture %>
-  </p>
-  <p>
-    <%= form.label :caption %><br>
-    <%= form.text_area :caption %>
-  <p>
-    <%= form.submit "Upload" %>
-  </p>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Back to feed', posts_path %>
