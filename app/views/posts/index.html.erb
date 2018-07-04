@@ -6,7 +6,7 @@
   <row>
     <p>
       <strong>Post: <%= post.id %></strong><br>
-      <%= image_tag post.picture.url(:medium) %><br>
+      <%= link_to (image_tag post.picture.url(:medium)), post_path(post) %><br>
       <%= post.caption %>
     </p>
     <p>
