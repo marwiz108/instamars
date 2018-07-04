@@ -15,4 +15,5 @@
   </p>
 <% end %>
 
+<%= link_to 'Delete post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Back to feed', posts_path %>
