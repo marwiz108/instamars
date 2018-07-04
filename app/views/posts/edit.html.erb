@@ -1,0 +1,18 @@
+<h1>Edit post</h1>
+
+<p>
+  <strong>Post: <%= @post.id %></strong><br>
+  <%= image_tag @post.picture.url(:medium) %><br>
+</p>
+
+<%= form_for @post do |form| %>
+  <p>
+    <%= form.label :caption %><br>
+    <%= form.text_area :caption %>
+  <p>
+  <p>
+    <%= form.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back to feed', posts_path %>

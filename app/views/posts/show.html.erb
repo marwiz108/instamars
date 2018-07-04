@@ -5,5 +5,8 @@
 <p>
   <%= @post.caption %>
 </p>
+<p>
+  <%= link_to 'Edit', edit_post_path(@post) %>
+</p>
 
 <%= link_to 'Back to feed', posts_path %>
