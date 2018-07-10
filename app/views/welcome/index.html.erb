@@ -1,3 +1,28 @@
-<h1>Instamars</h1>
-<p>Marwa's version of Instagram</p>
-<%= link_to 'My Posts', controller: 'posts' %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Instamars</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>Instamars</h1>
+
+    <p>Marwa's version of Instagram</p>
+
+    <ul>
+      <li>
+        <p class="active">
+          <%= link_to 'My Posts', controller: 'posts' %>
+        </p>
+      </li>
+    </ul>
+  </body>
+</html>

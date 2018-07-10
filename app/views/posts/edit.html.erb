@@ -1,19 +1,40 @@
-<h1>Edit post</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Instamars</title>
 
-<p>
-  <strong>Post: <%= @post.id %></strong><br>
-  <%= image_tag @post.picture.url(:medium) %><br>
-</p>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-<%= form_for @post do |form| %>
-  <p>
-    <%= form.label :caption %><br>
-    <%= form.text_area :caption %>
-  <p>
-  <p>
-    <%= form.submit "Update" %>
-  </p>
-<% end %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<%= link_to 'Delete post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Back to feed', posts_path %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>Instamars</h1>
+
+    <h2>Edit post</h2>
+
+    <p>
+      <strong>Post: <%= @post.id %></strong><br>
+      <%= image_tag @post.picture.url(:medium) %><br>
+    </p>
+
+    <%= form_for @post do |form| %>
+      <p>
+        <%= form.label :caption %><br>
+        <%= form.text_area :caption %>
+      <p>
+      <p>
+        <%= form.submit "Update" %>
+      </p>
+    <% end %>
+
+    <p class="active">
+      <%= link_to 'Delete post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Back to feed', posts_path %>
+    </p>
+  </body>
+</html>

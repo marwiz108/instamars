@@ -1,16 +1,40 @@
-<h1>My Posts</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Instamars</title>
 
-<%= link_to 'New post', new_post_path %>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-<% @posts.reverse_each do |post| %>
-  <row>
-    <p>
-      <strong>Post: <%= post.id %></strong><br>
-      <%= link_to (image_tag post.picture.url(:medium)), post_path(post) %><br>
-      <%= post.caption %>
-    </p>
-    <p>
-      <%= link_to 'Edit', edit_post_path(post) %>
-    </p>
-  </row>
-<% end %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>Instamars</h1>
+
+    <h2>My Feed</h2>
+
+    <ul>
+      <li>
+        <p class="active">
+          <%= link_to 'New post', new_post_path %>
+        </p>
+      </li>
+    </ul>
+
+    <% @posts.reverse_each do |post| %>
+      <row>
+        <p>
+          <strong>Post: <%= post.id %></strong><br>
+          <%= link_to (image_tag post.picture.url(:medium)), post_path(post) %><br>
+          <%= post.caption %>
+        </p>
+        <p class="active">
+          <%= link_to 'Edit', edit_post_path(post) %>
+        </p>
+      </row>
+    <% end %>
+</body>

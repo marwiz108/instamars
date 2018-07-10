@@ -1,5 +1,27 @@
-<h1>New Post</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Instamars</title>
 
-<%= render 'form' %>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-<%= link_to 'Back to feed', posts_path %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>Instamars</h1>
+
+    <h2>New Post</h2>
+
+    <p>
+      <%= render 'form' %>
+    </p>
+    <p class="active">
+      <%= link_to 'Back to feed', posts_path %>
+    </p>
+  </body>
+</html>

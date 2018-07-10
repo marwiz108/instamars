@@ -1,13 +1,33 @@
-<p>
-  <strong>Post: <%= @post.id %></strong><br>
-  <%= image_tag @post.picture.url(:medium) %>
-</p>
-<p>
-  <%= @post.caption %>
-</p>
-<p>
-  <%= link_to 'Edit', edit_post_path(@post) %>
-  <%= link_to 'Delete post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
-</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Instamars</title>
 
-<%= link_to 'Back to feed', posts_path %>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>Instamars</h1>
+
+    <p>
+      <strong>Post: <%= @post.id %></strong><br>
+      <%= image_tag @post.picture.url(:medium) %>
+    </p>
+    <p>
+      <%= @post.caption %>
+    </p>
+    <p class="active">
+      <%= link_to 'Edit', edit_post_path(@post) %>
+      <%= link_to 'Delete post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+    <p class="active">
+      <%= link_to 'Back to feed', posts_path %>
+    </p>
+  </body>
+</html>
